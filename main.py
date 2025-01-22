@@ -10,12 +10,18 @@ def main():
     screen = pygame.display.set_mode((constants.SCREEN_WIDTH, constants.SCREEN_HEIGHT))
     runflag = True
 
+    clock = pygame.time.Clock()
+    dt = 0.0
+
+
     while(runflag):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 runflag = False
-        screen.fill(1,1,1) #black screen
+        screen.fill("black") #black screen
         pygame.display.flip()
+        dt = clock.tick(60)
+        dt = dt/1000
 
     pygame.quit()
 
