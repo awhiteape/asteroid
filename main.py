@@ -52,6 +52,7 @@ def main():
                 if asteroid_obj.check_collision(bullet):
                     asteroid_obj.kill()
                     bullet.kill()
+                    asteroid_obj.split()
         
         if keys[pygame.K_ESCAPE]:
             runflag = False
